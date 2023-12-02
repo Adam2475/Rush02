@@ -17,6 +17,7 @@ int	select_case()
 {
 	if (digits == 1)
 	else if (digits == 2)
+	return 2
 	else if (digits == 3)
 	else if (digits == 4)
 	else if (digits == 5)
