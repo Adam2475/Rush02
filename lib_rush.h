@@ -12,14 +12,16 @@
 
 #ifndef LIB_RUSH_H
 # define LIB_RUSH_H
-#endif
-#define BUFFER_SIZE 1024
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+
+# define BUFFER_SIZE 1024
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 int	ft_atoi(char *str);
 int	ft_strlen(char *str);
 void    ft_putstr(char *str);
 char	**ft_split(char *str, char c);
 int     ft_check_arg(char **av, int av);
+
+#endif
