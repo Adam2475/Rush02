@@ -12,6 +12,7 @@
 
 #ifndef LIB_RUSH_H
 # define LIB_RUSH_H
+
 # define BUFFER_SIZE 1024
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,7 +23,7 @@ int	ft_strlen(char *str);
 void    ft_putstr(char *str);
 char	**ft_split(char *str, char c);
 int     ft_check_arg(char **av, int av);
-int	is_num(char *str);
+int is_num(char *str);
 char	**ft_split(char *s, char c)
 
 #endif
