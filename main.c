@@ -6,11 +6,19 @@
 /*   By: mapichec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 11:50:37 by mapichec          #+#    #+#             */
-/*   Updated: 2023/12/02 12:11:28 by mapichec         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:25:46 by mapichec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_rush.h"
+
+void	ft_diff_arg(char **split, int ac)
+{
+	if (ac == 2)
+		ft_one_arg(split);
+	else
+		ft_two_arg(split);
+}
 
 int	main(int ac, char **av)
 {
@@ -19,7 +27,7 @@ int	main(int ac, char **av)
 	int		fd;
 	int		bytes_rd;
 
-	if (ac < 2 || ac > 3)
+	if (ft_check_arg )
 	{
 		ft_putstr("Error\n");
 		return (0);
@@ -34,5 +42,5 @@ int	main(int ac, char **av)
 	}
 	close(fd);
 	if (ac == 2 || ac == 3)
-		ft_
+		ft_diff_arg(split, ac);
 }
