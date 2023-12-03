@@ -7,6 +7,14 @@ int	find_digits(char *nbr)
 
 int	select_magnitude(char *nb)
 {
+	int	size;
+	int	magnitude;
+	size = find_digits(nb);
+	magnitude = select_case(nb);
+}
+
+int	select_case() //da fare
+{
 	int caso;
 	else if (digits == 3)
 		return (caso = 3);

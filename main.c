@@ -12,11 +12,11 @@
 
 #include "lib_rush.h"
 
-void	ft_diff_arg(char **split, int ac)
+void	ft_diff_arg(char **split, int ac) //puo' essere sostituito da un if
 {
-	if (ac == 2)
-		ft_one_arg(split);
-	else
+	if (ac == 2) //prende di default il dizionario
+		ft_one_arg(split); 
+	else //prende quello dato
 		ft_two_arg(split);
 }
 
