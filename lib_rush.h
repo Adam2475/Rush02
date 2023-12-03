@@ -6,7 +6,7 @@
 /*   By: mapichec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 11:51:08 by mapichec          #+#    #+#             */
-/*   Updated: 2023/12/02 18:36:54 by mapichec         ###   ########.fr       */
+/*   Updated: 2023/12/03 10:56:01 by mapichec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 typedef struct	t_list
 {
-	int	posix;
-	char	*str;
-	t_list	*next;
+	int		posix;
+	char		*str;
+	struct t_list	*next;
 } 		t_list;
 int     ft_strcmp(char *s1, char *s2);
 int	ft_atoi(char *str);
