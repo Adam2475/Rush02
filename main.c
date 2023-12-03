@@ -49,23 +49,32 @@ void	ft_diff_arg(char **split, int ac) //puo' essere sostituito da un if
 t_list	*list_init(char **split)
 {
 	t_list	*list;
+	t_list	*list2;
 	int	i;
 	int	len;
 	
 	if (!split)
 		return (NULL);
 	i = 0;
-	len = ft_strlen((char *)split);
-	list = ft_lstnewnum(ft_atoi(split[i]));
-	while (i++ < ac -1)
+	len = split_check(split);
+	if (len < 32)
+		return (NULL);
+	list = ft_lstnew_node(split[i]);
+	while (i++ < len -1)
 	{
-		ft_lstadd_backnum(&list, lst_newnum(ft_atoi(split[i])));
+		ft_lstadd_backnode(&list, ft_lstnew_node(split[i]));
+	}
+	list2 = list;
+	while (list2 != NULL)
+	{
+		printf("%d\t%s\n", list2->posix, list2->str);
+		list2 = list2->next;
 	}
 	// Do checks on created list
-	return (testa);
+	return (list);
 }
 
-t_list	*split_init(char **split, t_list *list)
+char	**split_init(char **split)
 {
 	int		fd;
 	int		bytes_rd;
@@ -73,16 +82,18 @@ t_list	*split_init(char **split, t_list *list)
 	
 	fd = open("numbers.dict", O_RDONLY);
 	bytes_rd = read(fd, buffer, BUFFER_SIZE - 1);
+	//printf("%d\n%s\n", fd, buffer);
 	if (fd == -1 || bytes_rd == -1)
 	{
 		ft_putstr("DictError\n");
 		return NULL;
 	}
 	split = ft_split(buffer, '\n');
+	//for (int i = 0; split[i] != NULL; i++)
+	//	printf("%s\n", split[i]);
 	// Inizializzazione lista
-	list = list_init(split);
 	close(fd);
-	return (list);
+	return (split);
 }
 
 int	main(int ac, char **av)
@@ -101,13 +112,17 @@ int	main(int ac, char **av)
 	// Lettura del dict
 	if (ac == 2)
 	{
-		split_init(split, list);
+		split = split_init(split);
 	}
+	list = list_init(split);
+	(void)list;
 	if (!split || split_check(split) == 1)
 	{
-		ft_putstr("DictError\n");
+		//ft_putstr(split[0]);
+		ft_putstr("DictErrorMerda\n");
 		return (0);
 	}
+	// Solve function(list)
 	//free_matrix(split);
 	//free(list);
 	return (0);

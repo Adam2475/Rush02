@@ -1,6 +1,6 @@
 #include "lib_rush.h"
 
-void	case_two_digits() //53
+/*void	case_two_digits() //53
 {
 	int dec;
 	int uni;
@@ -13,4 +13,4 @@ void	case_two_digits() //53
 	
 	compose_literal;
 	print_literal;
-}
+}*/
