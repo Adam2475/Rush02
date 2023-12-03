@@ -14,9 +14,6 @@
 
 int	ft_check_arg(char **av, int ac)
 {
-	int	i;
-
-	i = 0;
 	if (ac < 2 || ac > 3)
 		return (1);
 	if (is_num(av[ac - 1]))

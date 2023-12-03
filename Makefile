@@ -5,16 +5,17 @@ SRC = main.c utils.c ft_split.c \
 	args_formatter.c check_args.c find_algo.c \
 	ft_atoi.c ft_one_arg.c ft_two_arg.c \
 	
-OBJ = $(SRC:.cpp=.o)
-EXE = Rush02
+OBJ = $(SRC:.c=.o)
+NAME = Rush02
+RM = rm -rf
 
-all: $(EXE)
+all: $(NAME)
 
-$(EXE): $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 clean:
-	rm -f $(OBJ) $(EXE)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm - $(EXE)
+	rm - $(NAME)
