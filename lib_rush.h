@@ -20,18 +20,11 @@
 
 typedef struct	s_list
 {
-<<<<<<< HEAD
-	int		posix;
-	char		*str;
-	struct t_list	*next;
-} 		t_list;
-=======
 	int	posix;
 	char	*str;
 	struct t_list	*next;
 } 	t_list;
 
->>>>>>> 5c26a8ecd43be55ca2e65f39c5c5aed583e4389c
 int     ft_strcmp(char *s1, char *s2);
 int	ft_atoi(char *str);
 int	ft_strlen(char *str);
