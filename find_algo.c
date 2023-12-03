@@ -13,7 +13,7 @@ void	find_cases(t_dict *dict, char *nb)
 	magnitude = select_case(nb);
 }
 
-int	select_case()
+int	select_case() //da fare
 {
 	if (digits == 1)
 	else if (digits == 2)
