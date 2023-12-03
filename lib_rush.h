@@ -26,16 +26,20 @@ typedef struct	s_list
 	struct t_list	*next;
 } 	t_list;
 
-int     ft_strcmp(char *s1, char *s2);
-int	ft_atoi(char *str);
-int	ft_strlen(char *str);
-void    ft_putstr(char *str);
-char	**ft_split(char *str, char c);
-int     ft_check_arg(char **av, int ac);
-int	is_num(char *str);
-char	**ft_split(char *s, char c);
-void	ft_two_arg();
-void	ft_one_arg();
-int	split_check(char **split);
+int     	ft_strcmp(char *s1, char *s2);
+int		ft_atoi(char *str);
+int		ft_strlen(char *str);
+void    	ft_putstr(char *str);
+char		**ft_split(char *str, char c);
+int     	ft_check_arg(char **av, int ac);
+int		is_num(char *str);
+char		**ft_split(char *s, char c);
+void		ft_two_arg();
+void		ft_one_arg();
+int		split_check(char **split);
+void		ft_free_list(t_stack **lst);
+void		ft_lstadd_backnum(t_stack **lst, t_stack *new);
+void		ft_lstadd_frontnum(t_stack **lst, t_stack *new);
+t_list		*ft_lstnewnum(int num);
 
 #endif

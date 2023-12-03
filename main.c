@@ -46,31 +46,26 @@ void	ft_diff_arg(char **split, int ac) //puo' essere sostituito da un if
 	}
 }*/
 
-//char	**split_manager(int fd, char **split, buffer)
-
-t_list	*list_init(char **split, int len)
+t_list	*list_init(char **split)
 {
 	t_list	*list;
-	t_list	*testa;
 	int	i;
-
+	int	len;
+	
+	if (!split)
+		return (NULL);
 	i = 0;
-	(void)split;
-	(void)len;
-	i++;
-	list = (t_list *)malloc(sizeof(t_list) * 1);
-	testa = (t_list *)malloc(sizeof(t_list) * 1);
-	(void)list;
-	//testa = &list;
-	//list->next = NULL;
-	//while (i < len)
-	//{
-	//
-	//}
+	len = ft_strlen((char *)split);
+	list = ft_lstnewnum(ft_atoi(split[i]));
+	while (i++ < ac -1)
+	{
+		ft_lstadd_backnum(&list, lst_newnum(ft_atoi(split[i])));
+	}
+	// Do checks on created list
 	return (testa);
 }
 
-char	**split_init(char **split)
+t_list	*split_init(char **split, t_list *list)
 {
 	int		fd;
 	int		bytes_rd;
@@ -81,11 +76,13 @@ char	**split_init(char **split)
 	if (fd == -1 || bytes_rd == -1)
 	{
 		ft_putstr("DictError\n");
-		return ;
+		return NULL;
 	}
 	split = ft_split(buffer, '\n');
-	//ft_one_arg(split);
-	return (split);
+	// Inizializzazione lista
+	list = list_init(split);
+	close(fd);
+	return (list);
 }
 
 int	main(int ac, char **av)
@@ -93,7 +90,8 @@ int	main(int ac, char **av)
 	char		**split;
 	t_list		*list;
 	
-	dict_reader();
+	split = NULL;
+	list = NULL;
 	// Controllo sugli argomenti
 	if (ft_check_arg(av, ac))
 	{
@@ -103,17 +101,14 @@ int	main(int ac, char **av)
 	// Lettura del dict
 	if (ac == 2)
 	{
-		split_init(split);
+		split_init(split, list);
 	}
 	if (!split || split_check(split) == 1)
 	{
 		ft_putstr("DictError\n");
 		return (0);
 	}
-	// Inizializzazione lista
-	list = list_init(split, fd);
-	// Close fd && free
 	//free_matrix(split);
-	close(fd);
+	//free(list);
 	return (0);
 }
