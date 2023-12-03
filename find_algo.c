@@ -1,69 +1,48 @@
-#include "lib_rush.h"
+#include<stdio.h>
+#include<stdlib.h>
 
-int	find_digits(char *nbr)
+int	ft_isdigit(int c)
 {
-	return (ft_strlen(nbr));
+    if (c >= '0' && c <= '9')
+        return (1);
+    else
+        return (0);
 }
 
-int	select_magnitude(int digits)
+int	ft_pow(int base, int exp)
 {
-	int	size;
-	int	magnitude;
-	size = find_digits(nb);
-	magnitude = select_case(nb);
+	int	i;
+	int	result;
+
+	if (exp == 0)
+		return (1);
+	i = 0;
+	result = 1;
+	while (i < exp)
+	{
+		result *= base;
+		i++;
+	}
+	return (result);
 }
 
-int	select_case() //da fare
+int	*string_to_int_ptr(char const *str)
 {
-	int caso;
-	caso = 0;
-	if (digits == 3)
-		return (caso = 3);
-	else if (digits == 4)
-		return (caso = 4);
-	else if (digits == 5)
-		return (caso = 5);
-	else if (digits == 6)
-		return (caso = 6);
-	else if (digits == 7)
-		return (caso = 7);
-	else if (digits == 8)
-		return (caso = 8);
-	else if (digits == 9)
-		return (caso = 9);
-	else if (digits == 10)
-		return (caso = 10);
-	return (caso);
-}
-
-/*void	find_cases(t_list *list, char *nb, int num)
-{
-	int	size;
-	int	magnitude;
-	size = find_digits(nb);
+	int	*ptr[3]; // num_ptr, dec_ptr, mul_ptr
+	int	i;
+	int	len;
 	
-	if (num < 20)
-		execute_case_teen(dict, nb, num);
-	else
-	{
-		magnitude = select_case(nb);
-		execute_case_full(nb, dict, num, magnitude);
-	}
-}*/
-
-/*void	execute_case_teen(int num, t_list)
-{
-	while (t_list)
-	{
-		if (list->posix == num)
-			print(list->value);
-	}
-}*/
-
-/*void	execute_case_full(char *nb, t_dict *dict, int num, int magnitude)
-{
-	if (magnitude == 2)
-}*/
-
-
-
+	len = ft_strlen(str);
+	ptr[0] = (int *)malloc(len * sizeof(int)); // num_ptr
+	ptr[1] = (int *)malloc(len * sizeof(int)); // dec_ptr
+	ptr[2] = (int *)malloc(len * sizeof(int)); // mul_ptr
+	if (!ptr[0] || !ptr[1] || !ptr[2])
+		return (NULL);
+	i = 0;
+	while (str[i] && ft_isdigit(str[i]))
+		i++;
+	*ptr[0] = ft_atoi(ft_strsub(str, 0, i)); // num_ptr
+	*ptr[1] = ft_pow(10, i); // dec_ptr, calculate the power of 10 based on the index
+	*ptr[2] = *ptr[0] * *ptr[1]; // mul_ptr
+	return (ptr[2]);
+}
