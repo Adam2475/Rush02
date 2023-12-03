@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC = main.c utils.c ft_split.c \
-	check_args.c \
+	check_args.c holder_creator.c \
 	ft_atoi.c list_utils.c \
 	
 OBJ = $(SRC:.c=.o)
