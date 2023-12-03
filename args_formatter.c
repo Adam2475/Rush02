@@ -29,6 +29,6 @@ int	*format_args(char *str, int size)
 		j++;
 	}
 	return (tmp);
-}
+} 
 
 //conversione
