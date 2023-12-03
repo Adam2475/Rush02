@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRC = main.c utils.c ft_split.c \
 	args_formatter.c check_args.c find_algo.c \
-	ft_atoi.c \
+	ft_atoi.c ft_one_arg.c ft_two_arg.c \
 	
 OBJ = $(SRC:.cpp=.o)
 EXE = Rush02
@@ -15,3 +15,6 @@ $(EXE): $(OBJ)
 	
 clean:
 	rm -f $(OBJ) $(EXE)
+
+fclean: clean
+	rm - $(EXE)

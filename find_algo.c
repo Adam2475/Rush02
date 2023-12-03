@@ -41,4 +41,19 @@ void	find_cases(t_dict *dict, char *nb, int num)
 	}
 }
 
+void	execute_case_teen(int num, t_list)
+{
+	while (t_list)
+	{
+		if (list->posix == num)
+			print(list->value);
+	}
+}
+
+void	execute_case_full(char *nb, t_dict *dict, int num, int magnitude)
+{
+	if (magnitude == 2)
+}
+
+
 
