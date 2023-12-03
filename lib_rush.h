@@ -32,6 +32,8 @@ void    ft_putstr(char *str);
 char	**ft_split(char *str, char c);
 int     ft_check_arg(char **av, int ac);
 int	is_num(char *str);
-char	**ft_split(char *s, char c)
+char	**ft_split(char *s, char c);
+void	ft_two_arg();
+void	ft_one_arg();
 
 #endif

@@ -95,4 +95,5 @@ int	main(int ac, char **av)
 	close(fd);
 	if (ac == 2 || ac == 3)
 		ft_diff_arg(split, ac);
+	return (0);
 }
