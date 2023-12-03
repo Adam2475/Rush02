@@ -6,13 +6,13 @@
 /*   By: mapichec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:45:34 by mapichec          #+#    #+#             */
-/*   Updated: 2023/12/02 14:54:43 by mapichec         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:57:09 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_rush.h"
 
-static int	count_words(const char *str, char c)
+int	count_words(const char *str, char c)
 {
 	int	i;
 	int	trigger;
@@ -46,25 +46,18 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-int	ft_alloc(char **split, char *s, char c)
-{
-	split =(char **) malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!split)
-		return (1);
-	return (0);
-}
-
 char	**ft_split(char *s, char c)
 {
 	int	i;
 	int	j;
 	int	index;
 	char	**split;
-
-	split = NULL;
-	ft_alloc(split, s, c);
+	//printf("%s\n", s);
+	//printf("hola");
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !split)
 		return (0);
+	//printf("hola");
 	i = 0;
 	j = 0;
 	index = -1;
@@ -80,5 +73,6 @@ char	**ft_split(char *s, char c)
 		i++;
 	}
 	split[j] = 0;
+	//printf("%s\n", split[0]);
 	return (split);
 }

@@ -71,7 +71,7 @@ int	split_check(char **split)
 	i = 0;
 	while (split[i] != NULL)
 		i++;
-	if (i <= 32)
+	if (i < 32)
 		return (1);
 	return (i);
 }
