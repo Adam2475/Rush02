@@ -20,10 +20,10 @@
 
 typedef struct	s_list
 {
-	int		posix;
-	char		*str;
+	int	posix;
+	char	*str;
 	struct t_list	*next;
-} 		t_list;
+} 	t_list;
 
 int     ft_strcmp(char *s1, char *s2);
 int	ft_atoi(char *str);
