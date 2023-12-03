@@ -65,11 +65,11 @@ t_list	*list_init(char **split)
 		ft_lstadd_backnode(&list, ft_lstnew_node(split[i]));
 	}
 	list2 = list;
-	while (list2 != NULL)
+	/*while (list2 != NULL)
 	{
 		printf("%d\t%s\n", list2->posix, list2->str);
 		list2 = list2->next;
-	}
+	}*/
 	// Do checks on created list
 	return (list);
 }
@@ -100,6 +100,7 @@ int	main(int ac, char **av)
 {
 	char		**split;
 	t_list		*list;
+	int		*arr;
 	
 	split = NULL;
 	list = NULL;
@@ -115,7 +116,7 @@ int	main(int ac, char **av)
 		split = split_init(split);
 	}
 	list = list_init(split);
-	(void)list;
+	//(void)list;
 	if (!split || split_check(split) == 1)
 	{
 		//ft_putstr(split[0]);
