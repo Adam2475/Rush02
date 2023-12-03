@@ -42,6 +42,11 @@ void		ft_free_list(t_list **lst);
 void		ft_lstadd_backnode(t_list **lst, t_list *new);
 t_list		*ft_lstnew_node(char *split);
 t_list		*ft_lstlast(t_list *lst);
-int      count_words(const char *str, char c);
+int		count_words(const char *str, char c);
+int		*mult_array(int size);
+int		*num_array(char *arr, int size);
+void		solve_function(t_list *list, char *str);
+void	ft_solve_problem(t_list *list, int *arr, int *mult, int size);
+t_list	*ft_find_nums(t_list *list, int target);
 
 #endif
