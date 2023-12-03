@@ -30,6 +30,13 @@
 	{
 		fd = open(dict_path, O_RDONLY);
 		bytes_rd = read(fd, buffer, BUFFER_SIZE - 1);
+}
+    
+void	ft_diff_arg(char **split, int ac) //puo' essere sostituito da un if
+{
+	if (ac == 2) //prende di default il dizionario
+		ft_one_arg(split); 
+	else //prende quello dato
 		ft_two_arg(split);
 	}
 	if (fd == -1 || bytes_rd == -1)
