@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <fcntl.h>
 
 typedef struct	s_list
 {
@@ -35,5 +36,6 @@ int	is_num(char *str);
 char	**ft_split(char *s, char c);
 void	ft_two_arg();
 void	ft_one_arg();
+int	split_check(char **split);
 
 #endif

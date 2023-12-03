@@ -56,12 +56,14 @@ int	ft_alloc(char **split, char *s, char c)
 
 char	**ft_split(char *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
+	int	i;
+	int	j;
+	int	index;
 	char	**split;
 
-	if (!s || ft_alloc(split, s, c))
+	split = NULL;
+	ft_alloc(split, s, c);
+	if (!s || !split)
 		return (0);
 	i = 0;
 	j = 0;

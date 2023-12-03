@@ -17,10 +17,12 @@ int	*format_args(char *str, int size)
 	int	i;
 	int	j;
 	int	*tmp;
-
+	
+	tmp = NULL;
 	i = 0;
 	j = 0;
-	
+	(void)size;
+	(void)str;
 	while (str[i] != '\0')
 	{
 		i++;

@@ -30,12 +30,9 @@ int	is_dict(char *str)
 
 int	ft_check_arg(char **av, int ac)
 {
-	int	i;
-
-	i = 0;
 	if (ac < 2 || ac > 3)
 		return (1);
-	if (strcmp("2147483647", av[1]) > 0)
+	if (ft_strcmp("2147483647", av[1]) > 0)
 		return (1);
 	if (ac == 2)
 	{
