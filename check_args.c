@@ -12,39 +12,11 @@
 
 #include "lib_rush.h"
 
-int	is_dict(char *str)
-{
-	char	*dict;
-	int		i;
-
-	dict = "numbers.dict";
-	i = 0;
-	while (str[i] != '\0' && dict[i] != '\0')
-	{
-		if (str[i] != dict[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 int	ft_check_arg(char **av, int ac)
 {
 	if (ac < 2 || ac > 3)
 		return (1);
-	if (ft_strcmp("2147483647", av[1]) > 0)
+	if (is_num(av[ac - 1]))
 		return (1);
-	if (ac == 2)
-	{
-		if (is_num(av[1]))
-			return (1);
-	}
-	if (ac == 3)
-	{
-		if (is_num(av[1]))
-			return (1);
-		if (is_dict(av[2]))
-			return (1);
-	}
 	return (0);
 }
