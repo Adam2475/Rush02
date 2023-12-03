@@ -67,17 +67,17 @@ void	ft_solve_problem(t_list *list, int *arr, int *mult, int size)
 {	
 	t_list	*node_clone;
 	int	i;
-	char	**container;
-	int	j;
+	//char	**container;
+	//int	j;
 
 	node_clone = NULL;
 	i = 0;
-	j = 0;
+	//j = 0;
 	while (i < size)
 	{
 		node_clone = ft_find_nums(list, arr[i] * mult[i]);
-		ft_putstr(node_clone->str);
-		ft_put
+		if (!(arr[i] == 0 && i != 0))
+			ft_putstr(node_clone->str);
 		i++;
 	}
 }

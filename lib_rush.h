@@ -46,7 +46,8 @@ int		count_words(const char *str, char c);
 int		*mult_array(int size);
 int		*num_array(char *arr, int size);
 void		solve_function(t_list *list, char *str);
-void	ft_solve_problem(t_list *list, int *arr, int *mult, int size);
-t_list	*ft_find_nums(t_list *list, int target);
+void		ft_solve_problem(t_list *list, int *arr, int *mult, int size);
+t_list		*ft_find_nums(t_list *list, int target);
+char		*ft_strjoin(int size, char **strs, char *sep);
 
 #endif
